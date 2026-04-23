@@ -3,6 +3,7 @@ from src.product import Product
 
 class Category:
     """Класс категорий товаров"""
+
     name: str
     description: str
     products: list[Product]
@@ -17,5 +18,3 @@ class Category:
 
         Category.category_count += 1
         Category.product_count += len(list(products))
-
-
