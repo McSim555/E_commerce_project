@@ -39,3 +39,8 @@ line_length = 119
 disallow_untyped_defs = true
 warn_return_any = true
 exclude = '''.venv'''
+
+[dependency-groups]
+dev = [
+    "pytest-cov (>=7.1.0,<8.0.0)"
+]
