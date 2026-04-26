@@ -34,5 +34,18 @@ class Category:
             product_str += f'{product.name}, {product.price} руб. Остаток: {product.quantity} шт.\n'
         return product_str
 
+    @staticmethod
+    def products_list(self):
+        products = Category.get_products(self)
+        products_list = []
+        for p in products:
+            p_dict = {}
+            p_dict['name'] = p.name
+            p_dict['description'] = p.description
+            p_dict['price'] = p.price
+            p_dict['quantity'] = p.quantity
+            products_list.append(p_dict)
+        return products_list
+
 
 
