@@ -13,38 +13,38 @@ class Product:
         self.quantity = quantity
 
     @classmethod
-    def new_product(cls, data: dict, products_list) -> Product:
+    def new_product(cls, data: dict, products_list: list[dict]) -> Product:
+        """Создает новый продукт при этом проверяет, есть ли в категории такой же по имени продукт"""
         k = 0
         for p in products_list:
-            if p['name'] == data['name']:
-                name = p['name']
-                description = p['description']
-                price = max(p['price'], data['price'])
-                quantity = p['quantity'] + data['quantity']
+            if p["name"] == data["name"]:
+                name = p["name"]
+                description = p["description"]
+                price = max(p["price"], data["price"])
+                quantity = p["quantity"] + data["quantity"]
                 k += 1
         if k == 0:
-            name = data['name']
-            description = data['description']
-            price = data['price']
-            quantity = data['quantity']
+            name = data["name"]
+            description = data["description"]
+            price = data["price"]
+            quantity = data["quantity"]
         return cls(name, description, price, quantity)
-
 
     @property
     def price(self) -> float:
+        """Геттер цены"""
         return self.__price
 
     @price.setter
-    def price(self, new_price: float):
+    def price(self, new_price: float) -> None:
+        """Сеттер цены"""
         if new_price <= 0:
-            print('Цена не должна быть нулевая или отрицательная')
+            print("Цена не должна быть нулевая или отрицательная")
         elif new_price < self.__price:
-            confirmation = input('Новая цена ниже ранее установленной. Введите "y" для подтверждения, "n" отмены действия: ')
-            if confirmation == 'y':
+            confirmation = input(
+                'Новая цена ниже ранее установленной. Введите "y" для подтверждения, "n" отмены действия: '
+            )
+            if confirmation == "y":
                 self.__price = new_price
         else:
             self.__price = new_price
-
-
-
-
