@@ -19,6 +19,13 @@ class Category:
         Category.category_count += 1
         Category.product_count += len(self.__products)
 
+
+    def __str__(self):
+        products_count = 0
+        for product in self.__products:
+            products_count += product.quantity
+        return f"{self.name}, Количество продуктов: {products_count} шт."
+
     def add_product(self, product: Product) -> None:
         """Добавление нового продукта"""
         Category.product_count += 1
@@ -33,8 +40,10 @@ class Category:
         """Возвращает свойства продукта в виде строки"""
         product_str = ""
         for product in self.__products:
-            product_str += f"{product.name}, {product.price} руб. Остаток: {product.quantity} шт.\n"
+            product_str += str(product) + "\n"
+            # product_str += f"{product.name}, {product.price} руб. Остаток: {product.quantity} шт.\n"
         return product_str
+
 
     def products_list(self) -> list[dict]:
         """Возвращает категорию продуктов в виде списка словарей по продуктам"""
@@ -48,3 +57,4 @@ class Category:
             p_dict["quantity"] = p.quantity
             products_list.append(p_dict)
         return products_list
+
