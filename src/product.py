@@ -19,7 +19,7 @@ class Product:
     def __add__(self, other):
         """Определение операции сложения продуктов"""
         products_cost = self.quantity * self.price + other.quantity * other.price
-        return  products_cost
+        return products_cost
 
     @classmethod
     def new_product(cls, data: dict, products_list: list[dict]) -> Product:

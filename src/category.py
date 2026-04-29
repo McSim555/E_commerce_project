@@ -19,7 +19,6 @@ class Category:
         Category.category_count += 1
         Category.product_count += len(self.__products)
 
-
     def __str__(self):
         "Определение формата вывода str"
         products_count = 0
@@ -45,7 +44,6 @@ class Category:
             # product_str += f"{product.name}, {product.price} руб. Остаток: {product.quantity} шт.\n"
         return product_str
 
-
     def products_list(self) -> list[dict]:
         """Возвращает категорию продуктов в виде списка словарей по продуктам"""
         products = self.get_products()
@@ -58,4 +56,3 @@ class Category:
             p_dict["quantity"] = p.quantity
             products_list.append(p_dict)
         return products_list
-

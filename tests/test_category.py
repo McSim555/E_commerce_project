@@ -19,9 +19,11 @@ def test_init(category_smartphones, category_tv_sets):
 def test_add_product(category_smartphones, product_samsung):
     category_smartphones.add_product(product_samsung)
     assert category_smartphones.products == (
-        ('Samsung Galaxy S23 Ultra, 180000.0 руб. Остаток: 5\n'
-         'Iphone 15, 210000.0 руб. Остаток: 8\n'
-         'Samsung Galaxy S23 Ultra, 180000.0 руб. Остаток: 5\n')
+        (
+            "Samsung Galaxy S23 Ultra, 180000.0 руб. Остаток: 5\n"
+            "Iphone 15, 210000.0 руб. Остаток: 8\n"
+            "Samsung Galaxy S23 Ultra, 180000.0 руб. Остаток: 5\n"
+        )
     )
     assert category_smartphones.product_count == 3
 
@@ -39,5 +41,4 @@ def test_products_list(category_smartphones):
 
 
 def test_category_str(category_smartphones):
-    assert str(category_smartphones) == 'Смартфоны, Количество продуктов: 13 шт.'
-
+    assert str(category_smartphones) == "Смартфоны, Количество продуктов: 13 шт."
