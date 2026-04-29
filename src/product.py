@@ -13,9 +13,11 @@ class Product:
         self.quantity = quantity
 
     def __str__(self):
+        """Определение формата вывода str"""
         return f"{self.name}, {self.__price} руб. Остаток: {self.quantity}"
 
     def __add__(self, other):
+        """Определение операции сложения продуктов"""
         products_cost = self.quantity * self.price + other.quantity * other.price
         return  products_cost
 

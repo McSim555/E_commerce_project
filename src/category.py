@@ -21,6 +21,7 @@ class Category:
 
 
     def __str__(self):
+        "Определение формата вывода str"
         products_count = 0
         for product in self.__products:
             products_count += product.quantity

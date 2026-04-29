@@ -2,6 +2,7 @@ import pytest
 
 from src.category import Category
 from src.product import Product
+from src.products_iterator import ProductsIterator
 
 
 @pytest.fixture
@@ -94,3 +95,8 @@ def reset_category_counters():
     """Автоматически сбрасывает классовые счётчики перед каждым тестом"""
     Category.category_count = 0
     Category.product_count = 0
+
+
+@pytest.fixture
+def product_iterator(category_smartphones):
+    return ProductsIterator(category_smartphones)
