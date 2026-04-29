@@ -46,7 +46,7 @@ def test_create_objects_from_json(data_from_json):
     result = create_objects_from_json(data_from_json)
 
     assert result[0].name == "Смартфоны"
-    assert result[1].products[0].name == '55" QLED 4K'
+    assert result[1].get_products()[0].name == '55" QLED 4K'
 
     assert result[0].category_count == 2
     assert result[1].product_count == 4
