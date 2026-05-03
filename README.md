@@ -31,10 +31,13 @@
    Code coverage:
    Name               Stmts   Miss  Cover
    --------------------------------------
-   src\category.py               37      0   100%
+   src\category.py               39      0   100%
+   src\lawngrass.py              12      0   100%
    src\product.py                39      5    87%
-   src\products_iterator.py      15      0   100%
+   src\products_iterator.py      20      4    80%
+   src\smartphone.py             13      0   100%
    src\utils.py                  21      2    90%
+
   
 
 

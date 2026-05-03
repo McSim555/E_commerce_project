@@ -32,7 +32,7 @@ if __name__ == '__main__':
         "Смартфоны, как средство не только коммуникации, но и получения дополнительных функций для удобства жизни",
         [product1, product2, product3])
 
-    iterator = ProductsIterator(category1)
+    # iterator = ProductsIterator(category1)
 
-    for item in iterator:
-        print(item)
+    # for item in iterator:
+    #    print(item)
