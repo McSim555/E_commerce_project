@@ -12,6 +12,15 @@ class Product:
         self.__price = price
         self.quantity = quantity
 
+    def __str__(self):
+        """Определение формата вывода str"""
+        return f"{self.name}, {self.__price} руб. Остаток: {self.quantity}"
+
+    def __add__(self, other):
+        """Определение операции сложения продуктов"""
+        products_cost = self.quantity * self.price + other.quantity * other.price
+        return products_cost
+
     @classmethod
     def new_product(cls, data: dict, products_list: list[dict]) -> Product:
         """Создает новый продукт при этом проверяет, есть ли в категории такой же по имени продукт"""
