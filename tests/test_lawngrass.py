@@ -1,5 +1,6 @@
 import pytest
 
+
 def test_lawngrass_init(lawngrass_1):
     assert lawngrass_1.name == "Газонная трава"
     assert lawngrass_1.description == "Элитная трава для газона"
@@ -9,8 +10,10 @@ def test_lawngrass_init(lawngrass_1):
     assert lawngrass_1.germination_period == "7 дней"
     assert lawngrass_1.color == "Зеленый"
 
+
 def test_lawngrass_add(lawngrass_1, lawngrass_2):
     assert lawngrass_1 + lawngrass_2 == 16750.0
+
 
 def test_lawngrass_wrong_class(lawngrass_1):
     with pytest.raises(TypeError):

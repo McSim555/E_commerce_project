@@ -1,5 +1,6 @@
-from src.category import Category
 import pytest
+
+from src.category import Category
 
 
 def test_init(category_smartphones, category_tv_sets):
@@ -47,4 +48,4 @@ def test_category_str(category_smartphones):
 
 def test_add_product_wrong_category(category_smartphones):
     with pytest.raises(TypeError):
-        category_smartphones.add_product('Неправильный класс')
+        category_smartphones.add_product("Неправильный класс")
