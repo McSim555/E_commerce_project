@@ -23,8 +23,6 @@ class Smartphone(Product):
 
     def __add__(self, other):
         """Определение операции сложения продуктов"""
-        if type(other) is not Smartphone:
-            raise TypeError
-        else:
-            products_cost = self.quantity * self.price + other.quantity * other.price
-            return products_cost
+        if type(other) is Smartphone:
+            return self.quantity * self.price + other.quantity * other.price
+        raise TypeError
