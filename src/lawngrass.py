@@ -21,8 +21,8 @@ class LawnGrass(Product):
 
     def __add__(self, other):
         """Определение операции сложения продуктов"""
-        if type(other) is LawnGrass:
+        if type(other) is not LawnGrass:
+            raise TypeError
+        else:
             products_cost = self.quantity * self.price + other.quantity * other.price
             return products_cost
-        else:
-            raise TypeError

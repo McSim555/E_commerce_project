@@ -28,11 +28,12 @@ class Category:
 
     def add_product(self, product: Product) -> None:
         """Добавление нового продукта"""
-        if isinstance(product, Product):
+        if not isinstance(product, Product):
+            raise TypeError("Добавлять можно только продукты категории или подкатегории Product")
+        else:
             Category.product_count += 1
             self.__products.append(product)
-        else:
-            raise TypeError("Добавлять можно только продукты категории или подкатегории Product")
+
 
     def get_products(self) -> list[Product]:
         """Возвращает список продуктов в категории"""
