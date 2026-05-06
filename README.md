@@ -36,14 +36,19 @@
 
    Для написанным модулей product.py, category.py и utils.py покрытие > 80%
    Code coverage:
-   Name               Stmts   Miss  Cover
-   --------------------------------------
-   src\category.py               39      0   100%
-   src\lawngrass.py              12      0   100%
-   src\product.py                39      5    87%
-   src\products_iterator.py      20      4    80%
-   src\smartphone.py             13      0   100%
-   src\utils.py                  21      2    90%
+   Name                        Stmts   Miss  Cover
+   -----------------------------------------------
+   src\baseproduct.py              5      1    80%
+   src\category.py                40      0   100%
+   src\common_properties.py        7      3    57%
+   src\info_product_mixin.py       5      0   100%
+   src\lawngrass.py               11      0   100%
+   src\order.py                    6      6     0%
+   src\product.py                 42      5    88%
+   src\products_iterator.py       20      4    80%
+   src\smartphone.py              12      0   100%
+   src\utils.py                   21      2    90%
+
 
   
 
