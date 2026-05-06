@@ -1,4 +1,5 @@
 class InfoProductMixin:
+    """Миксин для вывода информации о создании нового объекта класса Product"""
     def __init__(self):
         print(repr(self))
 

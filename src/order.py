@@ -2,6 +2,7 @@ from src.common_properties import CommonProperties
 
 
 class Order(CommonProperties):
+    """Класс заказа"""
     name: str
     quantity: int
     price: float
