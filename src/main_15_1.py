@@ -1,31 +1,14 @@
 from src.category import Category
 from src.product import Product
 
-
-class ProductsIterator:
-    """Класс итератора для продуктов категории"""
-
-    def __init__(self, category_obj) -> None:
-        self.category_obj = category_obj
-        self.counter = 0
-
-    def __iter__(self):
-        self.counter = 0
-        return self
-
-    def __next__(self):
-        if self.counter < len(self.category_obj.get_products()):
-            product_list = self.category_obj.get_products()[self.counter]
-            self.counter += 1
-            return product_list
-        else:
-            raise StopIteration
-
-
 if __name__ == "__main__":
     product1 = Product("Samsung Galaxy S23 Ultra", "256GB, Серый цвет, 200MP камера", 180000.0, 5)
     product2 = Product("Iphone 15", "512GB, Gray space", 210000.0, 8)
     product3 = Product("Xiaomi Redmi Note 11", "1024GB, Синий", 31000.0, 14)
+
+    print(str(product1))
+    print(str(product2))
+    print(str(product3))
 
     category1 = Category(
         "Смартфоны",
@@ -33,7 +16,10 @@ if __name__ == "__main__":
         [product1, product2, product3],
     )
 
-    # iterator = ProductsIterator(category1)
+    print(str(category1))
 
-    # for item in iterator:
-    #    print(item)
+    print(category1.products)
+
+    print(product1 + product2)
+    print(product1 + product3)
+    print(product2 + product3)

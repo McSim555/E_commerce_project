@@ -1,3 +1,5 @@
+import pytest
+
 from src.category import Category
 
 
@@ -42,3 +44,8 @@ def test_products_list(category_smartphones):
 
 def test_category_str(category_smartphones):
     assert str(category_smartphones) == "Смартфоны, Количество продуктов: 13 шт."
+
+
+def test_add_product_wrong_category(category_smartphones):
+    with pytest.raises(TypeError):
+        category_smartphones.add_product("Неправильный класс")
