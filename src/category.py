@@ -1,7 +1,8 @@
+from src.common_properties import CommonProperties
 from src.product import Product
 
 
-class Category:
+class Category(CommonProperties):
     """Класс категорий товаров"""
 
     name: str
@@ -33,7 +34,6 @@ class Category:
         else:
             Category.product_count += 1
             self.__products.append(product)
-
 
     def get_products(self) -> list[Product]:
         """Возвращает список продуктов в категории"""
