@@ -21,5 +21,5 @@ class Order():
         finally:
             print('Обработка добавления товара завершена')
 
-order1 = Order('Samsung', 1, 30000)
-print(order1.name)
+# order1 = Order('Samsung', 1, 30000)
+# print(order1.name)
