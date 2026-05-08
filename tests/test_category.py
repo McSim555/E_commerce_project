@@ -49,3 +49,16 @@ def test_category_str(category_smartphones):
 def test_add_product_wrong_category(category_smartphones):
     with pytest.raises(TypeError):
         category_smartphones.add_product("Неправильный класс")
+
+def test_average_price(category_smartphones):
+    assert category_smartphones.middle_price() == 195000.0
+
+def test_add_product_zero_quantity(zero_quantity_products):
+    assert zero_quantity_products.middle_price() == 0
+
+def test_message_product_added(capsys, product_samsung, category_smartphones):
+    category_smartphones.add_product(product_samsung)
+    message = capsys.readouterr()
+    assert message.out.strip().split('\n')[-1] == 'Обработка добавления товара завершена'
+    assert message.out.strip().split('\n')[-2] == 'Товар добавлен'
+
