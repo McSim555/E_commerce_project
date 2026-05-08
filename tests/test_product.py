@@ -1,3 +1,5 @@
+import pytest
+
 from src.product import Product
 
 
@@ -43,3 +45,8 @@ def test_product_str(product_iphone):
 
 def test_add_product(product_iphone, product_samsung):
     assert product_iphone + product_samsung == 2580000.0
+
+
+def test_zero_quantity():
+    with pytest.raises(ValueError):
+        Product("Samsung Galaxy S23 Ultra", "256GB, Серый цвет, 200MP камера", 180000.0, 0)
