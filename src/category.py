@@ -35,16 +35,15 @@ class Category(CommonProperties):
         else:
             try:
                 if product.quantity == 0:
-                    raise ZeroQuantityException('Нельзя добавить товара с нулевым количеством')
+                    raise ZeroQuantityException("Нельзя добавить товара с нулевым количеством")
             except ZeroQuantityException as e:
                 print(e)
             else:
                 Category.product_count += 1
                 self.__products.append(product)
-                print('Товар добавлен')
+                print("Товар добавлен")
             finally:
-                print('Обработка добавления товара завершена')
-
+                print("Обработка добавления товара завершена")
 
     def get_products(self) -> list[Product]:
         """Возвращает список продуктов в категории"""
@@ -78,4 +77,3 @@ class Category(CommonProperties):
             return round((sum(product.price for product in self.get_products()) / len(self.__products)), 2)
         except ZeroDivisionError:
             return 0
-

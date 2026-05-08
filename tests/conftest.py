@@ -130,6 +130,7 @@ def lawngrass_1():
 def lawngrass_2():
     return LawnGrass("Газонная трава 2", "Выносливая трава", 450.0, 15, "США", "5 дней", "Темно-зеленый")
 
+
 @pytest.fixture
 def zero_quantity_products():
     return Category(
