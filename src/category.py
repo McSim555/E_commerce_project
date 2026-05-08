@@ -1,5 +1,6 @@
 from src.common_properties import CommonProperties
 from src.product import Product
+from src.zero_quantity_exception import ZeroQuantityException
 
 
 class Category(CommonProperties):
@@ -32,8 +33,18 @@ class Category(CommonProperties):
         if not isinstance(product, Product):
             raise TypeError("Добавлять можно только продукты категории или подкатегории Product")
         else:
-            Category.product_count += 1
-            self.__products.append(product)
+            try:
+                if product.quantity == 0:
+                    raise ZeroQuantityException('Нельзя добавить товара с нулевым количеством')
+            except ZeroQuantityException as e:
+                print(e)
+            else:
+                Category.product_count += 1
+                self.__products.append(product)
+                print('Товар добавлен')
+            finally:
+                print('Обработка добавления товара завершена')
+
 
     def get_products(self) -> list[Product]:
         """Возвращает список продуктов в категории"""
