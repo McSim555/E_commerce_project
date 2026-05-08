@@ -60,3 +60,11 @@ class Category(CommonProperties):
             p_dict["quantity"] = p.quantity
             products_list.append(p_dict)
         return products_list
+
+    def middle_price(self):
+        """Метод подсчитывает среднюю цену товаров"""
+        try:
+            return round((sum(product.price for product in self.get_products()) / len(self.__products)), 2)
+        except ZeroDivisionError:
+            return 0
+
